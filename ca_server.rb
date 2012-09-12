@@ -22,6 +22,7 @@ opts = {
 
 class Server  < Sinatra::Base
 
+    # Allow clients to download certificates for 'ca' or the certname of a node.
     get '/:environment/certificate/:certname' do
       if params[:certname] == 'ca'
         content_type 'text/plain'
@@ -34,11 +35,13 @@ class Server  < Sinatra::Base
       end
     end
 
+    # Allow clients to download the CRL
     get '/:environment/certificate_revocation_list/ca' do
         content_type 'text/plain'
         send_file File.join(CERT_PATH, 'ca_crl.pem')
     end
 
+    # Allow clients to submit CSRs
     put '/:environment/certificate_request/:certname' do
       begin
         host = Resolv.new.getname(request.ip)
