@@ -40,8 +40,12 @@ class Server  < Sinatra::Base
     end
 
     put '/:environment/certificate_request/:certname' do
-      host = Resolv.new.getname(request.ip)
-      puts host
+      begin
+        host = Resolv.new.getname(request.ip)
+      rescue
+        host = 'unconfigured.dns'
+      end
+
       if validate(host, params[:certname])
         csr = OpenSSL::X509::Request.new(request.body.read)
         key = OpenSSL::PKey::RSA.new File.open(File.join(CERT_PATH, 'ca_key.pem'))
