@@ -39,8 +39,8 @@ Puppet to validate connections, or you can configure Apache to terminate.
 
 * The agent's ssl directory should look like this:
 
-      # tree /etc/puppetlabs/puppet/ssl/
-      /etc/puppetlabs/puppet/ssl/
-      |-- certs
-      |   `-- ca.pem
-      `-- crl.pem
+        # tree /etc/puppetlabs/puppet/ssl/
+        /etc/puppetlabs/puppet/ssl/
+        |-- certs
+        |   `-- ca.pem
+        `-- crl.pem
