@@ -1,0 +1,11 @@
+# don't commit any certificates!
+certs
+signed
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
