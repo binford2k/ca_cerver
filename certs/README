@@ -1,0 +1,5 @@
+Place CA certificates, keys, etc. here.
+
+If you replicate the Puppet master's ssl/ca/ca_* certificates here, then
+this will be a seamless drop in replacement for the built in CA.
+

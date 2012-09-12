@@ -1,6 +1,6 @@
 # don't commit any certificates!
-certs
-signed
+certs/*.pem
+signed/*.pem
 
 # OS generated files #
 ######################

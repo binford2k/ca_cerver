@@ -1,0 +1,2 @@
+This is a working directory for the service. It will store certificates here
+after signing the CSRs. The client will poll and download when available.
