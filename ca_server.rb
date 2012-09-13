@@ -46,7 +46,7 @@ class Server  < Sinatra::Base
       begin
         host = Resolv.new.getname(request.ip)
       rescue
-        host = 'unconfigured.dns'
+        host = nil
       end
 
       if validate(host, params[:certname])
