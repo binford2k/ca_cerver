@@ -15,8 +15,8 @@ opts = {
         :Logger             => WEBrick::Log::new($stderr, WEBrick::Log::DEBUG),
         :SSLEnable          => true,
         :SSLVerifyClient    => OpenSSL::SSL::VERIFY_NONE,
-        :SSLCertificate     => OpenSSL::X509::Certificate.new(  File.open(File.join(CERT_PATH, 'ca_crt.pem')).read),
-        :SSLPrivateKey      => OpenSSL::PKey::RSA.new(          File.open(File.join(CERT_PATH, 'ca_key.pem')).read),
+        :SSLCertificate     => OpenSSL::X509::Certificate.new(  File.open(File.join(CERT_PATH, 'server_crt.pem')).read),
+        :SSLPrivateKey      => OpenSSL::PKey::RSA.new(          File.open(File.join(CERT_PATH, 'server_key.pem')).read),
         :SSLCertName        => [ [ "CN",WEBrick::Utils::getservername ] ]
 }
 
